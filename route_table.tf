@@ -50,7 +50,7 @@ resource "aws_route_table_association" "private_subnet_rt_association" {
     route_table_id = aws_route_table.private_rt.id
 }
 
-# Adding Route to the Route table
+# Adding Route to the default VPC Route table
 resource "aws_route" "default_vpc_route" {
   route_table_id            = var.DEFAULT_VPC_RT
   destination_cidr_block    = var.VPC_CIDR
