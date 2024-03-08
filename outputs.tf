@@ -1,31 +1,34 @@
 output "VPC_ID" {
-    value = aws_vpc.main.id
+    value = module.vpc.VPC_ID
 }
 
 output "VPC_CIDR" {
-    value = aws_vpc.main.cidr_block
+    value = module.vpc.VPC_CIDR
 }
 
 output "PUBLIC_SUBNET_CIDR" {
-    value = aws_subnet.public_subnet.*.cidr_block
+    value = module.vpc.PUBLIC_SUBNET_CIDR
 }
 
 output "PRIVATE_SUBNET_CIDR" {
-    value = aws_subnet.private_subnet.*.cidr_block
+    value = module.vpc.PRIVATE_SUBNET_CIDR
 }
 
 output "DEFAULT_VPC_ID" {
-    value = var.DEFAULT_VPC_ID
+    value = module.vpc.DEFAULT_VPC_ID
 }
 
 output "PUBLIC_SUBNET_IDS" {
-    value = aws_subnet.public_subnet.*.cidr_block
+    value = module.vpc.PUBLIC_SUBNET_IDS
 }
 
 output "PRIVATE_SUBNET_IDS" {
-    value = aws_subnet.private_subnet.*.cidr_block
+    value = module.vpc.PRIVATE_SUBNET_IDS
 }
 
+output "DEFAULT_VPC_CIDR" {
+    value = module.vpc.DEFAULT_VPC_CIDR
+}
 
 
 
